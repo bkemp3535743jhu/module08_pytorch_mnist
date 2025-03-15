@@ -128,6 +128,18 @@ def plot(loss_list, acc_train, acc_test, save_path='./figure.png'):
     plt.subplot(1, 2, 1)
     plt.plot(loss_list)
     plt.xlabel('Iteration')
+    plt.ylabel('Loss')
+    plt.title(f"training Loss")
+
+    # Plot the train & test accuracies over epochs
+    plt.subplot(1, 2, 2)
+    plt.plot(acc_train)
+    plt.plot(acc_test)
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
+    plt.title("Model Accuracy")
+    plt.legend(['Training', 'Testing'])
+
     plt.savefig(save_path)
 
 if __name__ == "__main__":
