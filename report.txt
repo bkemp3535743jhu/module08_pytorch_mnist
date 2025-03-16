@@ -1,0 +1,46 @@
+Module 8 Report
+
+This assignment demonstrates successful ability to import Module 7's assignment from a Google Colab environemnt into a GitHub development space.
+
+The development environment of GitHub/Git/VSCode is a popular developemnt environment that allows for seamless collaboration between AI engineers.
+VSCode is a customizable, versatile environment with a strong community, and is commonly used in team-based object oriented developemnt environemnts.
+Git allows for version control, allowing developers to track changes, and collaborate efficiently, specifically using multiple branches to push individual changes into a main branch.
+GitHub Codespaces integrates VSCode and Git into a cloud-cased environment, where users can connect with a variety of computing resources, including JHU's Rockfish,
+to efficiently link remote computing resources with the user's developemnt environemnt. 
+
+To execute this assignment, our team created GitHub accounts, and utilized the above resources to create a collaborative environment to execute Module 7's code.
+Module 7 code was adapted to fit into two files: a "run.py" file, which handles the main run and argument definition, and a "utilities.py" file, which defines the
+"ConvNet" class, and functions to train the convolutional network on MNIST data. The "utilities" file largely remains the same between Module 7 and Module 8.
+The "run.py" file contains modification to utilize the "args" approach for object oriented code execution, replacing hyperparameters with "args" that can be 
+defined in the terminal. 
+
+As the "CodeSpaces" environment is used, versions of PyTorch and related libraries can simply be imported, rather than downloading each library to our local computers.
+In addition, since the "CodeSpaces" environment only utilizes CPU, training took longer than the google colab training, which used T4 GPU resources. This can be mitigated
+in the future by simply connecting to either Google Cloud GPU remote sessions, or connecting to RockFish to utilize GPU nodes. 
+
+The below text shows the resultant output from running the run.py file. This text shows similar output to the output exhibited in Module 7's PyTorch execution,
+demonstrating seamless integration between google colab and GitHub development environemnts.  
+
+@blink4535743jhu ➜ /workspaces/module08_pytorch_mnist (branch1) $ python run.py
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9.91M/9.91M [00:00<00:00, 23.3MB/s]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 28.9k/28.9k [00:00<00:00, 562kB/s]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.65M/1.65M [00:00<00:00, 5.26MB/s]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.54k/4.54k [00:00<00:00, 22.8MB/s]
+ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Linear(in_features=3136, out_features=1000, bias=True)
+  (fc2): Linear(in_features=1000, out_features=10, bias=True)
+)
+Training: 001/2: 100%|████████████████████████████████████████████████████████| 60/60 [01:42<00:00,  1.71s/it, loss=1.076835]
+Training: 002/2: 100%|████████████████████████████████████████████████████████| 60/60 [01:34<00:00,  1.58s/it, loss=0.102564]
