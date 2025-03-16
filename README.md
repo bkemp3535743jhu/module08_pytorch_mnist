@@ -37,7 +37,9 @@ ConvNet(
 Training: 001/2: 100%|████████████████████████████████████████████████████████| 60/60 [01:42<00:00,  1.71s/it, loss=1.076835]
 Training: 002/2: 100%|████████████████████████████████████████████████████████| 60/60 [01:34<00:00,  1.58s/it, loss=0.102564]
 
-![ Alt Text](figure.png)
+
+The figure below represents the output with the default parameters. Note that there are only two epochs. To view better convergence, run for more epochs using the -e flag.
+![ Figure (Default)](figure_default.png)
 
 
 
