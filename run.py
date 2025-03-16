@@ -1,16 +1,13 @@
-import argparse
+# Custon Utilities 
 from utilities import ConvNet, track_accuracy, training, plot
 
-# TODO: Try to move the code that requires these to utilities.py
+# Libraries needed to set up main run
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
-from tqdm import tqdm
-import numpy as np
-
+import argparse
 
 def main():
     # Device configuration (use GPU if available)
